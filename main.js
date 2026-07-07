@@ -34,7 +34,7 @@ const setStatus = (online) => {
 
 const renderHero = (em, emdata) => {
   $("totalPower").textContent = fmt(em.total_act_power, 2);
-  $("totalCurrent").textContent = `${fmt(em.total_current, 3)} A total current`;
+  $("totalCurrent").textContent = `${fmt(em.total_current, 3)} A corriente total`;
   $("totalAprt").textContent = fmt(em.total_aprt_power, 2);
   $("totalEnergy").textContent = fmt(emdata.total_act, 0);
   $("totalReturned").textContent = fmt(emdata.total_act_ret, 0);
@@ -88,7 +88,7 @@ const renderPhases = (emData, emdataData) => {
   grid.innerHTML = "";
   grid.appendChild(renderPhase("a", "A"));
   grid.appendChild(renderPhase("b", "B"));
-  grid.appendChild(renderPhase("c", "C"));
+  grid.appendChild(renderPhase("c", "C/Fuente pro 3em"));
 };
 
 const renderInfo = (data) => {
@@ -152,10 +152,10 @@ const fetchData = async () => {
     renderPhases(ds["em:0"], ds["emdata:0"]);
     renderInfo(data);
 
-    showToast("Data refreshed", "success");
+    showToast("Actualizado", "success");
   } catch (err) {
     setStatus(false);
-    showToast(`Fetch failed: ${err.message}`, "error");
+    showToast(`Error de carga: ${err.message}`, "error");
   } finally {
     setTimeout(() => btn.classList.remove("spinning"), 800);
   }
