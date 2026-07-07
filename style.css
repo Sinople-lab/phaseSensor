@@ -520,13 +520,16 @@ body {
   75% { transform: translateX(3px); }
 }
 
-@media (max-width: 480px) {
-  /* .alarm { bottom: 16px; left: 16px; padding: 10px 12px; }
+/*@media (max-width: 480px) {
+  .alarm { bottom: 16px; left: 16px; padding: 10px 12px; }
   .alarm-light { width: 18px; height: 18px; }
-  .alarm-label { font-size: 11px; }*/
+  .alarm-label { font-size: 11px; }
   .alarm{display: none;}
-}
+}*/
 
+@media only screen and (max-width: 767px) {
+  .alarm {display: none;}
+}
 /* Responsive */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
