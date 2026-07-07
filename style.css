@@ -521,9 +521,10 @@ body {
 }
 
 @media (max-width: 480px) {
-  .alarm { bottom: 16px; left: 16px; padding: 10px 12px; }
+  /* .alarm { bottom: 16px; left: 16px; padding: 10px 12px; }
   .alarm-light { width: 18px; height: 18px; }
-  .alarm-label { font-size: 11px; }
+  .alarm-label { font-size: 11px; }*/
+  .alarm{display: none;}
 }
 
 /* Responsive */
