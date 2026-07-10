@@ -33,9 +33,9 @@ const setStatus = (online) => {
 };
 
 const renderHero = (em, emdata) => {
-  $("totalPower").textContent = fmt(em.total_act_power, 2);
+  $("totalPower").textContent = fmt(em.total_act_power/1000, 2);
   $("totalCurrent").textContent = `${fmt(em.total_current, 3)} A corriente total`;
-  $("totalAprt").textContent = fmt(em.total_aprt_power/1000, 2);
+  $("totalAprt").textContent = fmt(em.total_aprt_power, 2);
   $("totalEnergy").textContent = fmt(emdata.total_act/1000, 2);
   $("totalReturned").textContent = fmt(emdata.total_act_ret, 0);
 };
