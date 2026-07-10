@@ -519,6 +519,19 @@ body {
   25% { transform: translateX(-3px); }
   75% { transform: translateX(3px); }
 }
+.footer-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.footer-author {
+  font-size: 13px;
+  color: var(--accent);
+  margin-top: 4px;
+  font-weight: 600;
+}
 
 /*@media (max-width: 480px) {
   .alarm { bottom: 16px; left: 16px; padding: 10px 12px; }
