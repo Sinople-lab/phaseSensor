@@ -11,7 +11,7 @@ const showToast = (msg, type = "") => {
   const toast = $("toast");
   toast.textContent = msg;
   toast.className = "toast show " + type;
-  setTimeout(() => toast.classList.remove("show"), 3000);
+  setTimeout(() => toast.classList.remove("show"), 60000);
 };
 
 const setStatus = (online) => {
@@ -35,8 +35,8 @@ const setStatus = (online) => {
 const renderHero = (em, emdata) => {
   $("totalPower").textContent = fmt(em.total_act_power, 2);
   $("totalCurrent").textContent = `${fmt(em.total_current, 3)} A corriente total`;
-  $("totalAprt").textContent = fmt(em.total_aprt_power, 2);
-  $("totalEnergy").textContent = fmt(emdata.total_act, 0);
+  $("totalAprt").textContent = fmt(em.total_aprt_power/1000, 2);
+  $("totalEnergy").textContent = fmt(emdata.total_act/1000, 2);
   $("totalReturned").textContent = fmt(emdata.total_act_ret, 0);
 };
 
@@ -68,11 +68,11 @@ const renderPhase = (phase, label, color) => {
       </div>
       <div class="metric">
         <span class="metric-label">Aparente</span>
-        <span class="metric-value">${fmt(em[`${phase}_aprt_power`], 1)} VA</span>
+        <span class="metric-value">${fmt(em[`${phase}_aprt_power`]/1000, 2)} kVA</span>
       </div>
       <div class="metric">
-        <span class="metric-label">Energia</span>
-        <span class="metric-value">${fmt(emdata[`${phase}_total_act_energy`], 2)} Wh</span>
+        <span class="metric-label">Consumo</span>
+        <span class="metric-value">${fmt(emdata[`${phase}_total_act_energy`]/1000, 2)} kWh</span>
       </div>
     </div>
   `;
@@ -108,7 +108,7 @@ const renderInfo = (data) => {
     ["SSID", ds.wifi.ssid, ""],
     ["IP Address", ds.wifi.sta_ip, ""],
     ["Signal (RSSI)", `${ds.wifi.rssi} dBm`, ds.wifi.rssi > -60 ? "good" : "warn"],
-    ["Cloud", ds.cloud.connected ? "Connected" : "Disconnected", ds.cloud.connected ? "good" : "warn"],
+    ["Ethernet", ds.eth.ip, ""],
     ["MQTT", ds.mqtt.connected ? "Connected" : "Disconnected", ds.mqtt.connected ? "good" : "muted"],
   ];
 
