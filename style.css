@@ -519,6 +519,14 @@ body {
   25% { transform: translateX(-3px); }
   75% { transform: translateX(3px); }
 }
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
 .footer-title {
   font-size: 15px;
   font-weight: 600;
