@@ -164,4 +164,4 @@ const fetchData = async () => {
 $("refreshBtn").addEventListener("click", fetchData);
 
 fetchData();
-setInterval(fetchData, 15000);
+setInterval(fetchData, 60000);
